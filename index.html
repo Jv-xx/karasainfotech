@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Karasa - India's Premier Digital Marketing Agency. We help local businesses grow with SEO, Ads, and Web Design.">
+    <meta name="keywords" content="Digital Marketing India, SEO Agency, Local Business Growth, Web Design, Karasa">
+    <title>Karasa | Digital Growth Agency</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ============================
+           1. CSS VARIABLES & RESET
+           ============================ */
+        :root {
+            --bg-dark: #050505;
+            --bg-card: #121212;
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --accent: #00ff88; /* Neon Green */
+            --accent-hover: #00cc6a;
+            --primary-blue: #2563eb;
+            --font-head: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: var(--font-head);
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .text-center { text-align: center; }
+        .text-accent { color: var(--accent); }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            font-family: var(--font-head);
+            font-weight: 600;
+            border-radius: 50px;
+            transition: var(--transition);
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--bg-dark);
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(0, 255, 136, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--text-main);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            background: var(--text-main);
+            color: var(--bg-dark);
+        }
+
+        /* ============================
+           2. NAVIGATION
+           ============================ */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(5, 5, 5, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            font-family: var(--font-head);
+            letter-spacing: -1px;
+        }
+
+        .logo span { color: var(--accent); }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover { color: var(--accent); }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ============================
+           3. HERO SECTION
+           ============================ */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 255, 136, 0.05) 0%, rgba(5, 5, 5, 1) 70%);
+            position: relative;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        /* ============================
+           4. SERVICES SECTION
+           ============================ */
+        .section-title {
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            padding: 40px 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .service-problem {
+            font-size: 0.9rem;
+            color: #ff4d4d;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .service-list {
+            margin: 20px 0;
+            color: var(--text-muted);
+        }
+
+        .service-list li {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .service-list li i {
+            color: var(--accent);
+            margin-right: 10px;
+        }
+
+        /* ============================
+           5. ABOUT & WHY US
+           ============================ */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .why-item {
+            text-align: center;
+        }
+
+        .why-item i {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .stats-banner {
+            background: var(--bg-card);
+            padding: 40px 0;
+            margin: 60px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stats-flex {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            text-align: center;
+            gap: 20px;
+        }
+
+        .stat-box h3 {
+            font-size: 2.5rem;
+            color: var(--accent);
+        }
+
+        /* ============================
+           6. TESTIMONIALS
+           ============================ */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .test-card {
+            background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .test-text {
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .client-info h4 {
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+        
+        .client-info span {
+            font-size: 0.85rem;
+            color: var(--primary-blue);
+        }
+
+        /* ============================
+           7. CONTACT SECTION
+           ============================ */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .contact-form input, 
+        .contact-form select, 
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            background: var(--bg-dark);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-main);
+            border-radius: 8px;
+            font-family: var(--font-body);
+        }
+
+        .contact-form input:focus {
+            border-color: var(--accent);
+        }
+
+        .map-container {
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        /* ============================
+           8. FLOATING BUTTONS
+           ============================ */
+        .floating-btns {
+            position: fixed;
+            bottom: 30px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .float-wa {
+            right: 30px;
+            position: fixed;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: var(--transition);
+        }
+
+        .float-call {
+            left: 30px;
+            position: fixed;
+            background: var(--primary-blue);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: none; /* Mobile only */
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .float-wa:hover { transform: scale(1.1); }
+
+        /* Footer */
+        footer {
+            background: #000;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* ============================
+           9. MOBILE RESPONSIVENESS
+           ============================ */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            
+            .nav-links {
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--bg-card);
+                flex-direction: column;
+                align-items: center;
+                padding: 40px 0;
+                transform: translateY(-150%);
+                transition: var(--transition);
+                border-bottom: 2px solid var(--accent);
+            }
+
+            .nav-links.active { transform: translateY(0); }
+            
+            .mobile-toggle { display: block; }
+            
+            .contact-wrapper { grid-template-columns: 1fr; }
+            
+            .hero-btns { flex-direction: column; width: 100%; }
+            .hero-btns .btn { width: 100%; text-align: center; }
+            
+            .float-call { display: flex; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">KARASA<span>.</span></div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+                    <li><a href="#services" onclick="toggleMenu()">Services</a></li>
+                    <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                    <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                    <li><a href="#contact" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.8rem;">Get Audit</a></li>
+                </ul>
+                <div class="mobile-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>We Help Local Businesses Get More <span class="text-accent">Leads, Sales & Growth</span> 🚀</h1>
+                <p>Stop chasing customers. Let us build a digital presence that makes them find YOU. Specialized strategies for Indian businesses.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn btn-primary">Get Free Audit</a>
+                    <a href="https://wa.me/919999999999" class="btn btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="stats-banner">
+        <div class="container">
+            <div class="stats-flex">
+                <div class="stat-box">
+                    <h3>200+</h3>
+                    <p>Clients in India</p>
+                </div>
+                <div class="stat-box">
+                    <h3>500%</h3>
+                    <p>Average ROI</p>
+                </div>
+                <div class="stat-box">
+                    <h3>50+</h3>
+                    <p>Industries Served</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="services" class="section-padding">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Our <span class="text-accent">Services</span></h2>
+                <p>Everything you need to dominate your local market.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-search service-icon"></i>
+                    <h3>Local SEO</h3>
+                    <p class="service-problem">❌ Customers can't find you on Google Maps?</p>
+                    <p class="service-solution">✅ We rank you #1 in your city.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Google My Business Optimization</li>
+                        <li><i class="fas fa-check"></i> Local Keyword Ranking</li>
+                        <li><i class="fas fa-check"></i> Citation Building</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline" style="width:100%; text-align:center;">Rank Higher</a>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-bullhorn service-icon"></i>
+                    <h3>Google & Meta Ads</h3>
+                    <p class="service-problem">❌ Burning money on ads with zero calls?</p>
+                    <p class="service-solution">✅ High ROI campaigns that generate leads.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Targeted Lead Generation</li>
+                        <li><i class="fas fa-check"></i> Low Cost Per Click (CPC)</li>
+                        <li><i class="fas fa-check"></i> Instant Results</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline" style="width:100%; text-align:center;">Start Ads</a>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-laptop-code service-icon"></i>
+                    <h3>Web Design</h3>
+                    <p class="service-problem">❌ Website looks old and doesn't sell?</p>
+                    <p class="service-solution">✅ Modern, fast, mobile-first designs.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Landing Pages that Convert</li>
+                        <li><i class="fas fa-check"></i> SEO-Optimized Structure</li>
+                        <li><i class="fas fa-check"></i> Fast Loading Speed</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline" style="width:100%; text-align:center;">Build Website</a>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-hashtag service-icon"></i>
+                    <h3>Social Media</h3>
+                    <p class="service-problem">❌ Posting daily but no engagement?</p>
+                    <p class="service-solution">✅ Build a brand people trust.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Instagram & LinkedIn Growth</li>
+                        <li><i class="fas fa-check"></i> Content Strategy</li>
+                        <li><i class="fas fa-check"></i> Community Management</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline" style="width:100%; text-align:center;">Grow Brand</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding" style="background: var(--bg-card);">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Why Choose <span class="text-accent">Karasa?</span></h2>
+                <p>We are not just a service provider; we are your growth partner.</p>
+            </div>
+            
+            <div class="text-center" style="max-width: 800px; margin: 0 auto;">
+                <p style="font-size: 1.1rem; margin-bottom: 20px;">
+                    Founded with a simple mission: <strong>To help Indian small businesses transition into the digital age without breaking the bank.</strong> We value transparency, hard work, and measurable results. No fluff, just growth.
+                </p>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-item">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Results First</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">We focus on ROI. If you don't grow, we don't grow.</p>
+                </div>
+                <div class="why-item">
+                    <i class="fas fa-handshake"></i>
+                    <h4>Total Transparency</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Monthly reports. No hidden fees. You know exactly where your money goes.</p>
+                </div>
+                <div class="why-item">
+                    <i class="fas fa-bolt"></i>
+                    <h4>Gen-Z Speed</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">We work fast. We adapt quickly. We keep you ahead o
