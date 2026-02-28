@@ -1,412 +1,575 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="google-site-verification" content="BzV0F8M9BsPoASCNDe4nZ0aTtbgNAOrsFdDKqn6aeHQ" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Karasa Infotech helps local businesses generate leads, increase sales, and grow online with performance-driven digital marketing strategies." />    <meta name="keywords" content="Digital Marketing India, SEO Agency, Local Business Growth, Web Design, Karasa">
-    <title>Karasa infotech| Digital marketing Agency</title>
+    
+    <title>KARASA | Data-Driven Digital Marketing Agency</title>
+    <meta name="description" content="Grow Faster. Rank Higher. Scale Smarter. KARASA helps brands grow using SEO, Paid Ads & High-Converting Websites.">
+    <meta name="author" content="Jenish Vaghela">
+    <meta name="robots" content="index, follow">
     <link rel="icon" type="image/png" href="favicon.png">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
- <style>
-        /* ============================
-           1. CSS VARIABLES & RESET
-           ============================ */
-        .social-icons {
-  margin-top: 25px;
-  display: flex;
-  gap: 12px;
-  justify-content: center;   /* CENTER FIX */
-}
 
-.social-icons img {
-  width: 28px;
-  height: 28px;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-.social-icons img:hover {
-  transform: scale(1.2);
-}
+    <style>
+        /* =========================================
+           VARIABLES & RESET
+           ========================================= */
         :root {
-            --bg-dark: #050505;
-            --bg-card: #121212;
-            --text-main: #ffffff;
-            --text-muted: #a0a0a0;
-            --accent: #00ff88; /* Neon Green */
-            --accent-hover: #00cc6a;
-            --primary-blue: #2563eb;
-            --font-head: 'Poppins', sans-serif;
-            --font-body: 'Inter', sans-serif;
-            --transition: all 0.3s ease;
+            --bg-main: #0B0F14;
+            --bg-alt: #070A0D;
+            --accent: #00FF88;
+            --accent-glow: rgba(0, 255, 136, 0.4);
+            --text-main: #FFFFFF;
+            --text-muted: #9CA3AF;
+            --glass-bg: rgba(255, 255, 255, 0.02);
+            --glass-border: rgba(255, 255, 255, 0.06);
+            --glass-hover: rgba(255, 255, 255, 0.05);
+            --radius: 16px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            outline: none;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 90px;
         }
 
         body {
-            background-color: var(--bg-dark);
+            background-color: var(--bg-main);
             color: var(--text-main);
-            font-family: var(--font-body);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        a { text-decoration: none; color: inherit; }
-        ul { list-style: none; }
-
-        /* Typography */
-        h1, h2, h3, h4 {
-            font-family: var(--font-head);
-            font-weight: 700;
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
         }
 
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* =========================================
+           UTILITIES & LAYOUT
+           ========================================= */
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 5%;
         }
 
-        .section-padding {
-            padding: 80px 0;
+        section {
+            padding: 100px 0;
         }
 
-        .text-center { text-align: center; }
-        .text-accent { color: var(--accent); }
+        .bg-alt {
+            background-color: var(--bg-alt);
+        }
 
-        /* Buttons */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius);
+            transition: var(--transition);
+        }
+
+        .glass-card:hover {
+            background: var(--glass-hover);
+            border-color: rgba(0, 255, 136, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* =========================================
+           BUTTONS
+           ========================================= */
         .btn {
             display: inline-block;
             padding: 14px 32px;
-            font-family: var(--font-head);
-            font-weight: 600;
             border-radius: 50px;
-            transition: var(--transition);
+            font-weight: 600;
+            font-size: 1rem;
             cursor: pointer;
-            text-transform: uppercase;
-            font-size: 0.9rem;
+            text-align: center;
             border: 2px solid transparent;
+            transition: var(--transition);
         }
 
         .btn-primary {
             background-color: var(--accent);
-            color: var(--bg-dark);
-            box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+            color: var(--bg-main);
         }
 
         .btn-primary:hover {
-            background-color: var(--accent-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 0 25px rgba(0, 255, 136, 0.5);
+            box-shadow: 0 0 20px var(--accent-glow);
+            transform: translateY(-2px);
         }
 
         .btn-outline {
-            background: transparent;
-            border: 2px solid var(--text-main);
-            color: var(--text-main);
+            background-color: transparent;
+            color: var(--accent);
+            border-color: var(--accent);
         }
 
         .btn-outline:hover {
-            background: var(--text-main);
-            color: var(--bg-dark);
+            background-color: var(--accent);
+            color: var(--bg-main);
+            box-shadow: 0 0 20px var(--accent-glow);
+            transform: translateY(-2px);
         }
 
-        /* ============================
-           2. NAVIGATION
-           ============================ */
+        /* =========================================
+           1. STICKY NAVBAR
+           ========================================= */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(5, 5, 5, 0.95);
-            backdrop-filter: blur(10px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: var(--transition);
+            padding: 20px 0;
+            background: rgba(11, 15, 20, 0.8);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid transparent;
+        }
+
+        header.scrolled {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--glass-border);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 80px;
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 800;
-            font-family: var(--font-head);
-            letter-spacing: -1px;
+            letter-spacing: 1px;
+            color: var(--text-main);
         }
 
-        .logo span { color: var(--accent); }
+        .logo span {
+            color: var(--accent);
+        }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 2.5rem;
+            align-items: center;
         }
 
         .nav-links a {
-            font-size: 0.95rem;
             font-weight: 500;
-            transition: var(--transition);
+            font-size: 0.95rem;
         }
 
-        .nav-links a:hover { color: var(--accent); }
+        .nav-links a:not(.btn):hover {
+            color: var(--accent);
+        }
 
-        .mobile-toggle {
+        /* Hamburger Menu */
+        .hamburger {
             display: none;
-            font-size: 1.5rem;
             cursor: pointer;
+            z-index: 1001;
+            background: transparent;
+            border: none;
+            padding: 5px;
         }
 
-        /* ============================
-           3. HERO SECTION
-           ============================ */
+        .bar {
+            display: block;
+            width: 25px;
+            height: 2px;
+            margin: 5px auto;
+            background-color: var(--text-main);
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+
+        /* =========================================
+           2. HERO SECTION
+           ========================================= */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: radial-gradient(circle at 50% 50%, rgba(0, 255, 136, 0.05) 0%, rgba(5, 5, 5, 1) 70%);
-            position: relative;
+            text-align: center;
             padding-top: 80px;
+            position: relative;
         }
 
-        .hero-content {
-            text-align: center;
-            max-width: 900px;
+        /* Subtle background glow effect */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, rgba(0,255,136,0.08) 0%, rgba(11,15,20,0) 70%);
+            z-index: -1;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            line-height: 1.2;
-            margin-bottom: 20px;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+            text-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
             color: var(--text-muted);
-            margin-bottom: 40px;
+            margin-bottom: 2.5rem;
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-inline: auto;
         }
 
         .hero-btns {
             display: flex;
-            gap: 20px;
+            gap: 1.5rem;
             justify-content: center;
         }
 
-        /* ============================
-           4. SERVICES SECTION
-           ============================ */
-        .section-title {
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
+        /* =========================================
+           3. SERVICES SECTION
+           ========================================= */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
         }
 
         .service-card {
-            background: var(--bg-card);
-            padding: 40px 30px;
-            border-radius: 16px;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent);
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
+        .icon-wrapper {
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 255, 136, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
             color: var(--accent);
-            margin-bottom: 20px;
+            margin-bottom: 1.5rem;
         }
 
         .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
         }
 
-        .service-problem {
-            font-size: 0.9rem;
-            color: #ff4d4d;
-            margin-bottom: 10px;
-            font-weight: 600;
+        .service-card ul {
+            flex-grow: 1;
         }
 
-        .service-list {
-            margin: 20px 0;
+        .service-card ul li {
             color: var(--text-muted);
-        }
-
-        .service-list li {
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-        }
-
-        .service-list li i {
-            color: var(--accent);
-            margin-right: 10px;
-        }
-
-        /* ============================
-           5. ABOUT & WHY US
-           ============================ */
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        .why-item {
-            text-align: center;
-        }
-
-        .why-item i {
-            font-size: 2rem;
-            color: var(--primary-blue);
-            margin-bottom: 15px;
-        }
-
-        .stats-banner {
-            background: var(--bg-card);
-            padding: 40px 0;
-            margin: 60px 0;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .stats-flex {
+            margin-bottom: 1rem;
             display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            text-align: center;
-            gap: 20px;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.95rem;
         }
 
-        .stat-box h3 {
-            font-size: 2.5rem;
+        .service-card ul li i {
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-top: 4px;
+        }
+
+        /* =========================================
+           4. ABOUT SECTION
+           ========================================= */
+        .about-content {
+            padding: 4rem 2rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
             color: var(--accent);
         }
 
-        /* ============================
-           6. TESTIMONIALS
-           ============================ */
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .test-card {
-            background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
-            padding: 30px;
-            border-radius: 12px;
-            border-left: 4px solid var(--accent);
-        }
-
-        .test-text {
+        .about-text {
+            font-size: clamp(1.2rem, 2vw, 1.6rem);
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
             font-style: italic;
+        }
+
+        .founder-name {
             color: var(--text-muted);
-            margin-bottom: 20px;
-        }
-
-        .client-info h4 {
+            font-weight: 500;
             font-size: 1.1rem;
-            color: var(--text-main);
-        }
-        
-        .client-info span {
-            font-size: 0.85rem;
-            color: var(--primary-blue);
+            margin-bottom: 2rem;
         }
 
-        /* ============================
-           7. CONTACT SECTION
-           ============================ */
-        .contact-wrapper {
+        /* =========================================
+           5. BLOG SECTION
+           ========================================= */
+        .blog-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            background: var(--bg-card);
-            padding: 40px;
-            border-radius: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
         }
 
-        .contact-form .form-group {
-            margin-bottom: 20px;
-        }
-
-        .contact-form input, 
-        .contact-form select, 
-        .contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            background: var(--bg-dark);
-            border: 1px solid rgba(255,255,255,0.1);
-            color: var(--text-main);
-            border-radius: 8px;
-            font-family: var(--font-body);
-        }
-
-        .contact-form input:focus {
-            border-color: var(--accent);
-        }
-
-        .map-container {
-            width: 100%;
-            height: 100%;
-            min-height: 300px;
-            border-radius: 12px;
+        .blog-card {
+            display: flex;
+            flex-direction: column;
             overflow: hidden;
         }
 
-        /* ============================
-           8. FLOATING BUTTONS
-           ============================ */
-        .floating-btns {
-            position: fixed;
-            bottom: 30px;
-            z-index: 999;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+        .blog-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--glass-border);
+            transition: transform 0.5s ease;
         }
 
-        .float-wa {
-            right: 30px;
+        .blog-card:hover .blog-img {
+            transform: scale(1.05);
+        }
+
+        .blog-img-wrapper {
+            overflow: hidden;
+        }
+
+        .blog-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            background: var(--glass-bg);
+        }
+
+        .blog-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .blog-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .read-more {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .read-more:hover {
+            gap: 12px;
+        }
+
+        /* =========================================
+           6. CONTACT SECTION
+           ========================================= */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .contact-info h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 50%;
+            font-size: 1.2rem;
+            color: var(--text-main);
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            color: var(--bg-main);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px var(--accent-glow);
+            border-color: var(--accent);
+        }
+
+        .contact-form {
+            padding: 3rem 2.5rem;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            color: var(--text-main);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* =========================================
+           7. FOOTER
+           ========================================= */
+        footer {
+            background: var(--bg-alt);
+            border-top: 1px solid var(--glass-border);
+            padding-top: 5rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            margin-top: 1.5rem;
+            max-width: 300px;
+        }
+
+        .footer-links h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .footer-links ul li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links ul li a {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* =========================================
+           8. WHATSAPP FLOATING BUTTON
+           ========================================= */
+        .whatsapp-float {
             position: fixed;
-            background: #25D366;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
             color: white;
             width: 60px;
             height: 60px;
@@ -414,240 +577,344 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            font-size: 2rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
             transition: var(--transition);
         }
 
-        .float-call {
-            left: 30px;
-            position: fixed;
-            background: var(--primary-blue);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: none; /* Mobile only */
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        .whatsapp-float:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
         }
 
-        .float-wa:hover { transform: scale(1.1); }
-
-        /* Footer */
-        footer {
-            background: #000;
-            padding: 40px 0;
-            text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.9rem;
-            color: var(--text-muted);
+        /* =========================================
+           RESPONSIVE DESIGN (MOBILE FIRST OVERRIDES)
+           ========================================= */
+        @media (max-width: 992px) {
+            .contact-wrapper, .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .hero h1 {
+                font-size: clamp(2.5rem, 8vw, 4rem);
+            }
         }
 
-        /* ============================
-           9. MOBILE RESPONSIVENESS
-           ============================ */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
+            .hamburger {
+                display: block;
+            }
             
             .nav-links {
-                position: absolute;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background: var(--bg-card);
+                position: fixed;
+                left: -100%;
+                top: 70px; /* Below header */
                 flex-direction: column;
-                align-items: center;
-                padding: 40px 0;
-                transform: translateY(-150%);
-                transition: var(--transition);
-                border-bottom: 2px solid var(--accent);
+                background: rgba(11, 15, 20, 0.98);
+                backdrop-filter: blur(20px);
+                width: 100%;
+                height: calc(100vh - 70px);
+                justify-content: flex-start;
+                padding-top: 2rem;
+                transition: 0.4s ease;
+                border-top: 1px solid var(--glass-border);
+            }
+            
+            .nav-links.active {
+                left: 0;
             }
 
-            .nav-links.active { transform: translateY(0); }
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 15px;
+                font-size: 1.1rem;
+            }
+
+            .nav-links .btn {
+                margin-top: 1rem;
+                width: 80%;
+                max-width: 300px;
+            }
             
-            .mobile-toggle { display: block; }
-            
-            .contact-wrapper { grid-template-columns: 1fr; }
-            
-            .hero-btns { flex-direction: column; width: 100%; }
-            .hero-btns .btn { width: 100%; text-align: center; }
-            
-            .float-call { display: flex; }
+            /* Hamburger Animation */
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(7px) rotate(45deg);
+            }
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-7px) rotate(-45deg);
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                width: 100%;
+                max-width: 350px;
+                margin: 0 auto;
+            }
+
+            .contact-form {
+                padding: 2rem 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">KARASA<span>.</span></div>
-              <ul class="nav-links" id="navLinks">
-  <li><a href="#home" onclick="toggleMenu()">Home</a></li>
-  <li><a href="#services" onclick="toggleMenu()">Services</a></li>
-  <li><a href="about.html" onclick="toggleMenu()">About</a></li>
-  <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-  <li>
-    <a href="#contact" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.8rem;">
-      Get Audit
-    </a>
-  </li>
-</ul>
-                <div class="mobile-toggle" onclick="toggleMenu()">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
-        </div>
+    <header id="header">
+        <nav class="container">
+            <a href="#" class="logo">KARASA<span>.</span></a>
+            
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="btn btn-primary">GET AUDIT</a></li>
+            </ul>
+
+            <button class="hamburger" aria-label="Toggle Navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </nav>
     </header>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-content">
-
-  <h1>...</h1>
-  <p>...</p>
-
-  <div class="hero-btns">
-     buttons here
-  </div>
-
-  <!-- PASTE SOCIAL ICONS HERE -->
-  <div class="social-icons">
-    <a href="https://www.instagram.com/karasainfotech/" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-    </a>
-
-    <a href="https://www.linkedin.com/in/jainish-vaghela-digital-marketer/" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="LinkedIn">
-    </a>
-
-    <a href="https://www.facebook.com/share/1B5ZTFdrm2/" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
-    </a>
-  </div>
-
-</div>
-                <h1>We Help Local Businesses Get More <span class="text-accent">Leads, Sales & Growth</span> 🚀</h1>
-                <p>Stop chasing customers. Let us build a digital presence that makes them find YOU. Specialized strategies for Indian businesses.</p>
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Grow Faster.<br>Rank Higher.<br><span>Scale Smarter.</span></h1>
+                <p>We help brands grow using SEO, Paid Ads & High-Converting Websites.</p>
                 <div class="hero-btns">
                     <a href="#contact" class="btn btn-primary">Get Free Audit</a>
-                    <a href="https://wa.me/919712478277" class="btn btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+                    <a href="#services" class="btn btn-outline">View Services</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <div class="stats-banner">
+        <section id="services" class="bg-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Services</h2>
+                </div>
+                <div class="services-grid">
+                    
+                    <div class="glass-card service-card">
+                        <div class="icon-wrapper"><i class="fa-solid fa-map-location-dot"></i></div>
+                        <h3>Local SEO</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Google My Business Optimization</li>
+                            <li><i class="fa-solid fa-check"></i> Local Keyword Ranking</li>
+                            <li><i class="fa-solid fa-check"></i> Citation Building</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card service-card">
+                        <div class="icon-wrapper"><i class="fa-solid fa-bullseye"></i></div>
+                        <h3>Google & Meta Ads</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> High ROI Campaigns</li>
+                            <li><i class="fa-solid fa-check"></i> Targeted Lead Generation</li>
+                            <li><i class="fa-solid fa-check"></i> Low CPC Strategy</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card service-card">
+                        <div class="icon-wrapper"><i class="fa-solid fa-laptop-code"></i></div>
+                        <h3>Web Design</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Landing Pages That Convert</li>
+                            <li><i class="fa-solid fa-check"></i> SEO Optimized Structure</li>
+                            <li><i class="fa-solid fa-check"></i> Fast Loading Speed</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card service-card">
+                        <div class="icon-wrapper"><i class="fa-solid fa-hashtag"></i></div>
+                        <h3>Social Media Growth</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Instagram & LinkedIn Growth</li>
+                            <li><i class="fa-solid fa-check"></i> Content Strategy</li>
+                            <li><i class="fa-solid fa-check"></i> Community Management</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <div class="glass-card about-content">
+                    <h2>About Us</h2>
+                    <p class="about-text">"I help local brands and businesses grow digitally through performance marketing, SEO, and strategic content."</p>
+                    <p class="founder-name">— Jenish Vaghela, Founder & Digital Marketer</p>
+                    <a href="#contact" class="btn btn-primary">Let's Work Together</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="bg-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Latest Insights</h2>
+                </div>
+                <div class="blog-grid">
+                    
+                    <article class="glass-card blog-card">
+                        <div class="blog-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600" alt="Local SEO Strategy" class="blog-img" loading="lazy">
+                        </div>
+                        <div class="blog-content">
+                            <h3>How to Rank #1 on Google Maps</h3>
+                            <p>Discover the exact framework we use to optimize Google My Business profiles and dominate local search results.</p>
+                            <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="glass-card blog-card">
+                        <div class="blog-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" alt="Meta Ads Dashboard" class="blog-img" loading="lazy">
+                        </div>
+                        <div class="blog-content">
+                            <h3>Beginner Guide to Meta Ads in India</h3>
+                            <p>Stop wasting ad spend. Learn how to structure high-converting campaigns targeting your ideal customer.</p>
+                            <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="glass-card blog-card">
+                        <div class="blog-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=600" alt="Business Growth Analytics" class="blog-img" loading="lazy">
+                        </div>
+                        <div class="blog-content">
+                            <h3>Why Every Local Business Needs SEO in 2026</h3>
+                            <p>Word of mouth isn't enough anymore. Here is why local SEO is the highest ROI investment for your business.</p>
+                            <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <div class="contact-wrapper">
+                    
+                    <div class="contact-info">
+                        <h2>Ready to Scale?</h2>
+                        <p>Drop us a message and let's discuss how we can skyrocket your digital presence and generate more leads.</p>
+                        
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/jenishh__.x?igsh=MWd5eWd6bXBwNTlzaA==" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/share/1B5ZTFdrm2/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://www.linkedin.com/in/jainish-vaghela-digital-marketer/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://wa.me/919712478277" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <form class="glass-card contact-form" onsubmit="event.preventDefault(); alert('Form submitted! In production, connect this to a service like Web3Forms.');">
+                        <div class="input-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required placeholder="John Doe">
+                        </div>
+                        <div class="input-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required placeholder="john@example.com">
+                        </div>
+                        <div class="input-group">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" required placeholder="Tell us about your business goals..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
         <div class="container">
-            <div class="stats-flex">
-                <div class="stat-box">
-                    <h3>200+</h3>
-                    <p>Clients in India</p>
-                </div>
-                <div class="stat-box">
-                    <h3>500%</h3>
-                    <p>Average ROI</p>
-                </div>
-                <div class="stat-box">
-                    <h3>50+</h3>
-                    <p>Industries Served</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <section id="services" class="section-padding">
-        <div class="container">
-            <div class="section-title text-center">
-                <h2>Our <span class="text-accent">Services</span></h2>
-                <p>Everything you need to dominate your local market.</p>
-            </div>
-
-            <div class="services-grid">
-                <div class="service-card">
-                    <i class="fas fa-search service-icon"></i>
-                    <h3>Local SEO</h3>
-                    <p class="service-problem">❌ Customers can't find you on Google Maps?</p>
-                    <p class="service-solution">✅ We rank you #1 in your city.</p>
-                    <ul class="service-list">
-                        <li><i class="fas fa-check"></i> Google My Business Optimization</li>
-                        <li><i class="fas fa-check"></i> Local Keyword Ranking</li>
-                        <li><i class="fas fa-check"></i> Citation Building</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-outline" style="width:100%; text-align:center;">Rank Higher</a>
-                </div>
-
-                <div class="service-card">
-                    <i class="fas fa-bullhorn service-icon"></i>
-                    <h3>Google & Meta Ads</h3>
-                    <p class="service-problem">❌ Burning money on ads with zero calls?</p>
-                    <p class="service-solution">✅ High ROI campaigns that generate leads.</p>
-                    <ul class="service-list">
-                        <li><i class="fas fa-check"></i> Targeted Lead Generation</li>
-                        <li><i class="fas fa-check"></i> Low Cost Per Click (CPC)</li>
-                        <li><i class="fas fa-check"></i> Instant Results</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-outline" style="width:100%; text-align:center;">Start Ads</a>
-                </div>
-
-                <div class="service-card">
-                    <i class="fas fa-laptop-code service-icon"></i>
-                    <h3>Web Design</h3>
-                    <p class="service-problem">❌ Website looks old and doesn't sell?</p>
-                    <p class="service-solution">✅ Modern, fast, mobile-first designs.</p>
-                    <ul class="service-list">
-                        <li><i class="fas fa-check"></i> Landing Pages that Convert</li>
-                        <li><i class="fas fa-check"></i> SEO-Optimized Structure</li>
-                        <li><i class="fas fa-check"></i> Fast Loading Speed</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-outline" style="width:100%; text-align:center;">Build Website</a>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">KARASA<span>.</span></a>
+                    <p>Grow Faster. Rank Higher. Scale Smarter. We are a data-driven digital marketing agency dedicated to your growth.</p>
                 </div>
                 
-                <div class="service-card">
-                    <i class="fas fa-hashtag service-icon"></i>
-                    <h3>Social Media</h3>
-                    <p class="service-problem">❌ Posting daily but no engagement?</p>
-                    <p class="service-solution">✅ Build a brand people trust.</p>
-                    <ul class="service-list">
-                        <li><i class="fas fa-check"></i> Instagram & LinkedIn Growth</li>
-                        <li><i class="fas fa-check"></i> Content Strategy</li>
-                        <li><i class="fas fa-check"></i> Community Management</li>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#blog">Latest Blog</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
-                    <a href="#contact" class="btn btn-outline" style="width:100%; text-align:center;">Grow Brand</a>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Local SEO</a></li>
+                        <li><a href="#services">Google & Meta Ads</a></li>
+                        <li><a href="#services">Web Design</a></li>
+                        <li><a href="#services">Social Media</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section id="about" class="section-padding" style="background: var(--bg-card);">
-        <div class="container">
-            <div class="section-title text-center">
-                <h2>Why Choose <span class="text-accent">Karasa?</span></h2>
-                <p>We are not just a service provider; we are your growth partner.</p>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <p>Copyright &copy; 2026 KARASA. All Rights Reserved.</p>
             </div>
-            
-            <div class="text-center" style="max-width: 800px; margin: 0 auto;">
-                <p style="font-size: 1.1rem; margin-bottom: 20px;">
-                    Founded with a simple mission: <strong>To help Indian small businesses transition into the digital age without breaking the bank.</strong> We value transparency, hard work, and measurable results. No fluff, just growth.
-                </p>
-            </div>
+        </div>
+    </footer>
 
-            <div class="why-grid">
-                <div class="why-item">
-                    <i class="fas fa-chart-line"></i>
-                    <h4>Results First</h4>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">We focus on ROI. If you don't grow, we don't grow.</p>
-                </div>
-                <div class="why-item">
-                    <i class="fas fa-handshake"></i>
-                    <h4>Total Transparency</h4>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Monthly reports. No hidden fees. You know exactly where your money goes.</p>
-                </div>
-                <div class="why-item">
-                    <i class="fas fa-bolt"></i>
-                    <h4>Gen-Z Speed</h4>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">We work fast. We adapt quickly. We keep you ahead o
+    <a href="https://wa.me/919712478277" target="_blank" class="whatsapp-float" aria-label="Chat with us on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            const header = document.querySelector('header');
+            const links = document.querySelectorAll('.nav-links a');
+
+            // Toggle Mobile Menu
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            // Close Mobile Menu when a link is clicked
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+
+            // Sticky Header Background on Scroll
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
